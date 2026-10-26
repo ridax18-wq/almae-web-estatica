@@ -1,0 +1,33 @@
+# Fotografías originales: nunca se publican en el repositorio.
+# (Se conservan completas en este disco; solo se suben las copias
+#  optimizadas y autorizadas que ya están en assets/images/.)
+/Imagenes/
+
+# Directorios de desarrollo / restos de proyectos anteriores.
+/ALMAEWEB/
+/ALMAE_WEB/
+
+# Fotografía de equipo sin autorización de uso verificada.
+# No publicar hasta contar con autorización documentada.
+/assets/images/equipo/
+
+# Entornos y credenciales
+.env
+.env.*
+*.pem
+*.key
+
+# Registros
+*.log
+logs/
+
+# Dependencias y cachés
+node_modules/
+.cache/
+__pycache__/
+*.pyc
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
