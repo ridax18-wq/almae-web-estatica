@@ -279,6 +279,31 @@
   meta('meta[name="twitter:title"]', CFG.nombre);
   meta('meta[name="twitter:description"]', seo.descripcion);
 
+  // Datos estructurados (schema.org LocalBusiness) generados desde config.js.
+  // Solo datos confirmados: nombre, dirección, teléfono y descripción.
+  // No incluye horarios ni valoraciones hasta que estén confirmados.
+  try {
+    var ld = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: CFG.nombre,
+      description: seo.descripcion,
+      telephone: CFG.whatsappVisible,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: (CFG.direccion || {}).texto,
+        addressCountry: "PE"
+      }
+    };
+    if (seo.urlPublica) ld.url = String(seo.urlPublica);
+    var script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(ld).replace(/</g, "\\u003c");
+    document.head.appendChild(script);
+  } catch (e) {
+    // Si falla, la página sigue funcionando sin datos estructurados.
+  }
+
   // Canonical y og:url/og:image SOLO cuando exista la URL pública real.
   if (seo.urlPublica) {
     var base = String(seo.urlPublica).replace(/\/+$/, "") + "/";

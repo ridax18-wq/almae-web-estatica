@@ -31,3 +31,10 @@ __pycache__/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Pruebas: dependencias y capturas locales (las capturas pueden contener datos de prueba).
+/tests/node_modules/
+/tests/.capturas/
+
+# Fotografía con persona identificable y crédito de autor: no publicar sin licencia y autorización.
+/assets/images/consultorio/ambiente-almae.jpg

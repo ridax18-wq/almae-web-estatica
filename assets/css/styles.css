@@ -13,7 +13,7 @@
   --color-sage-tint: #eef1e8;
   --color-ink: #2b2326;
   --color-ink-soft: #5c5256;
-  --color-ink-mute: #8a7f83;
+  --color-ink-mute: #7a6f73;
   --color-white: #ffffff;
   --color-line: rgba(43, 35, 38, 0.1);
   --color-line-strong: rgba(43, 35, 38, 0.18);
@@ -235,7 +235,8 @@ ul {
 }
 
 .btn--primary {
-  background: var(--color-primary);
+  /* Fondo ajustado para contraste AA con texto blanco (4.65:1). */
+  background: #a85f6c;
   color: var(--color-white);
   box-shadow: 0 8px 20px rgba(181, 106, 117, 0.28);
 }
@@ -999,7 +1000,13 @@ body.nav-open {
   justify-content: space-between;
   align-items: center;
   font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.45);
+  /* Contraste AA sobre el fondo oscuro del pie (≥ 4.5:1). */
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.site-footer__bottom p,
+.site-footer__bottom span {
+  color: inherit;
 }
 
 .whatsapp-float {
@@ -1105,6 +1112,8 @@ body.nav-open {
 
 .filter-btn {
   padding: 0.45rem 1rem;
+  /* Área táctil cómoda (≥ 44 px) en móvil y tableta. */
+  min-height: 2.75rem;
   border-radius: 999px;
   border: 1px solid var(--color-line-strong);
   background: transparent;
@@ -1183,7 +1192,7 @@ body.nav-open {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-sage);
+  color: #5f6e49; /* verde salvia oscurecido para contraste AA */
   margin: 0;
 }
 
@@ -1236,7 +1245,7 @@ body.nav-open {
   padding: 0.25rem 0.65rem;
   border-radius: 999px;
   background: var(--color-sage-tint);
-  color: var(--color-sage);
+  color: #5f6e49; /* verde salvia oscurecido para contraste AA */
   font-size: 0.82rem;
 }
 
@@ -1356,7 +1365,7 @@ body.nav-open {
 
 .promo-card__vig {
   font-size: 0.82rem;
-  color: var(--color-sage);
+  color: #5f6e49; /* verde salvia oscurecido para contraste AA */
   margin: 0.35rem 0 0;
 }
 
@@ -1465,8 +1474,9 @@ body.nav-open {
 .lightbox__prev,
 .lightbox__next {
   position: absolute;
-  background: rgba(255, 255, 255, 0.12);
-  border: none;
+  /* Fondo oscuro sólido: las flechas deben verse sobre fotos claras. */
+  background: rgba(20, 14, 16, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: #fff;
   cursor: pointer;
   border-radius: 50%;

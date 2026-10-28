@@ -1,0 +1,12 @@
+{
+  "name": "almae-tests",
+  "private": true,
+  "description": "Pruebas funcionales de la web ALMAE (no forman parte de la publicación)",
+  "scripts": {
+    "test": "node run-all.js"
+  },
+  "devDependencies": {
+    "lighthouse": "^13.5.0",
+    "puppeteer-core": "^23.11.1"
+  }
+}

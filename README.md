@@ -25,7 +25,7 @@ Sitio **estático**: HTML, CSS y JavaScript sin compilación, sin frameworks y s
 | Runtime | Ninguno. Navegadores modernos con ES6 |
 | Tipografías | Google Fonts (Cormorant Garamond y DM Sans), cargadas desde `fonts.googleapis.com` |
 | Build | No requiere |
-| Paquetes npm | No requiere (las herramientas de prueba se mantienen fuera del proyecto) |
+| Paquetes npm | No requiere para la web. Las pruebas (`tests\`) usan `puppeteer-core` y `lighthouse`; no forman parte de la publicación |
 
 ---
 
@@ -64,6 +64,16 @@ docs/
   GUIA_EDICION.md          Guía para la administración
   PUBLICACION_GITHUB.md    Procedimiento de publicación
   CONTROL_DE_CAMBIOS.md    Historial de cambios
+  PRUEBAS.md               Cómo ejecutar las pruebas automatizadas
+  CHECKLIST_PUBLICACION.md Requisitos, pendientes legales y comerciales, SEO y pruebas posteriores
+
+tests/                     Pruebas automatizadas (no forman parte de la publicación)
+  run-all.js               Ejecuta todas las suites
+  booking-test.js          Formulario de reservas (24)
+  hito5-test.js            Configuración, servicios, tarifas, promociones, imágenes, WhatsApp (20)
+  reservas-popup.js        Ventana de WhatsApp bloqueada o permitida (12)
+  responsive-audit.js      Diseño en 390, 820, 1024 y 1440 px (38)
+  seo-privacidad-audit.js  SEO, privacidad, seguridad de textos y archivos publicables (23)
 ```
 
 ### Orden de carga de scripts (importante)
@@ -142,6 +152,16 @@ Los textos de consulta general se editan en `config.js` → `mensajes`.
 
 ---
 
+## Pruebas
+
+Ver [`docs/PRUEBAS.md`](docs/PRUEBAS.md). Resumen:
+
+```powershell
+cd D:\ALMAE\tests
+npm install                 # una sola vez
+node run-all.js             # requiere el servidor local en el puerto 8765
+```
+
 ## Ejecución local
 
 ```powershell
@@ -163,13 +183,14 @@ Abrir `http://127.0.0.1:8765`. Alternativa: `py -m http.server 8765`.
 
 - Título, descripción y etiquetas Open Graph se generan desde `config.js`.
 - `canonical`, `og:url` y `og:image` **se añaden solo cuando se define `seo.urlPublica`**, para no publicar URLs ficticias.
+- Datos estructurados `LocalBusiness` (schema.org) generados desde `config.js`: nombre, teléfono, dirección y descripción. No incluyen horarios ni valoraciones hasta que estén confirmados.
 - `sitemap.xml` **no existe todavía**: requiere la URL definitiva. Está pendiente.
 
 ---
 
 ## Pendientes antes de publicar
 
-Ver la sección *Pendientes antes de publicar al público* de `docs/GUIA_EDICION.md`. Principalmente:
+Ver [`docs/CHECKLIST_PUBLICACION.md`](docs/CHECKLIST_PUBLICACION.md), que incluye la lista detallada de datos del responsable. Principalmente:
 
 - Revisión jurídica del aviso de privacidad y datos del responsable (4 marcadores `[PENDIENTE]` en `data/contenidos.js`).
 - Autorización de la fotografía de equipo (excluida de Git).

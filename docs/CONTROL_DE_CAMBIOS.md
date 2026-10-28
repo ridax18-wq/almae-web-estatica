@@ -4,6 +4,45 @@ Historial de cambios del proyecto web de ALMAE – Terapia y Spa.
 
 ---
 
+## Hito 6 — Auditoría integral y preparación para publicación
+
+**Estado:** auditado y corregido en local. Sin push ni repositorio remoto. Cambios del Hito 6 pendientes de confirmar en Git.
+
+### Control de versiones
+- Commit local `b9cfa49` «chore: baseline ALMAE static web through milestone 5» (48 archivos).
+- Excluida del índice `assets/images/consultorio/ambiente-almae.jpg` (persona identificable, crédito de fotógrafo, sin uso). Excluida también en `.gitignore`. **Sigue en el historial de `b9cfa49`**: decidir antes de cualquier push (ver `docs/CHECKLIST_PUBLICACION.md`, sección 6).
+- `.gitignore`: añadidos `tests/node_modules/` y `tests/.capturas/`.
+
+### Pruebas
+- Suites trasladadas a `tests/` sin rutas absolutas. Configurables con `ALMAE_BASE`, `CHROME_PATH` y `ALMAE_SHOTS`.
+- Nuevas: `run-all.js`, `reservas-popup.js` (12), `responsive-audit.js` (38), `seo-privacidad-audit.js` (23).
+- Resultado: **117/117 en raíz y en subdirectorio** `/almae-web-estatica/`.
+- Documentadas en `docs/PRUEBAS.md`.
+
+### Correcciones (defectos reales)
+- **Contraste del texto legal del pie**: 2,04:1 → ≥ 4,5:1 (opacidad del texto 0,45 → 0,72; el `<p>` heredaba un color propio).
+- **Flechas del visor de galería**: fondo translúcido de 12 % → fondo oscuro sólido con borde, visibles sobre fotos claras.
+- **Filtros de servicios**: altura mínima 44 px (área táctil).
+- **Botones primarios**: fondo `#b56a75` → `#a85f6c` (contraste 3,97 → 4,65 con texto blanco). Mismo tono, más oscuro.
+- **Texto secundario** (`--color-ink-mute`): `#8a7f83` → `#7a6f73` (3,86 → 4,83).
+- **Texto verde salvia** en categoría de servicio, etiquetas de modalidad y vigencia de promociones: `#8c9a7e` → `#5f6e49` (2,98 → 5,51).
+- Resultado Lighthouse de accesibilidad: 97 → 100 (móvil y escritorio).
+
+### SEO
+- Datos estructurados `LocalBusiness` (schema.org) generados por `content.js` desde `config.js`: nombre, teléfono visible, dirección y descripción.
+- Sin cambios en título, descripción, encabezados ni textos alternativos (todos verificados).
+
+### Documentación
+- Nuevos: `docs/PRUEBAS.md`, `docs/CHECKLIST_PUBLICACION.md` (requisitos, pendientes comerciales y legales, configuración SEO, pruebas posteriores).
+- Actualizados: `README.md` (carpeta `tests/`, datos estructurados, pruebas), este registro.
+
+### Hallazgos sin modificar (requieren decisión)
+- `consultorio-luminoso.jpg`: cartel «SE VENDE» con número de teléfono de un tercero visible al fondo.
+- Historial de `b9cfa49` con `ambiente-almae.jpg`.
+- LCP móvil de 3,4 s, asociado a la fotografía de portada. Mejora posible con versión reducida y `srcset`.
+
+---
+
 ## Hito 5 — Gestión de contenidos y consolidación
 
 **Estado:** implementado y verificado localmente. Sin publicar. Sin commit.
