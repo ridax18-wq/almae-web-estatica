@@ -44,8 +44,9 @@ const APROBADAS = {
   check(2, "sin nombres idénticos entre servicios", identicos.length === 0, identicos.map((g) => g.join("/")).join(" ") || "ok");
 
   // 2b. Posibles duplicados conocidos (informativo; decisión pendiente del responsable)
-  pendientes.push("DUPLICADO POSIBLE (decidir): fisioterapia-rehabilitacion ≈ terapia-fisica (mismo tratamiento; solo terapia-fisica tiene tarifa)");
-  pendientes.push("DUPLICADO POSIBLE (decidir): masoterapia ≈ masajes-descontracturantes (técnicas manuales similares)");
+  // Consolidado en el Hito 7: fisioterapia-rehabilitacion + terapia-fisica = terapia-fisica. Se mantienen masoterapia y masajes-descontracturantes (finalidad distinta).
+  check("2c", "consolidación: el servicio fusionado existe y el ID antiguo ya no", S.some((s) => s.id === "terapia-fisica" && s.nombre === "Terapia física y rehabilitación") && !S.some((s) => s.id === "fisioterapia-rehabilitacion"), "");
+  check("2d", "masoterapia y masajes descontracturantes mantienen descripciones distintas", S.find((s) => s.id === "masoterapia").descripcion !== S.find((s) => s.id === "masajes-descontracturantes").descripcion, "");
 
   // 3. Categoría coherente y sin servicios repetidos entre categorías
   const catIds = new Set(C.map((c) => c.id));
@@ -131,6 +132,17 @@ const APROBADAS = {
   }
   check(10, "filtros: cada categoría muestra exactamente sus servicios, sin duplicados", filtrosOk && new Set(unionIds).size === unionIds.length && new Set(unionIds).size === S.length, filtros.length + " filtros");
 
+  // Galería: título, aclaración visible y ausencia de afirmaciones de fotografía real
+  const galeria = await pg.evaluate(() => ({
+    titulo: (document.getElementById("galeria-title") || {}).textContent || "",
+    nota: (document.querySelector(".gallery-note") || {}).textContent || "",
+    texto: (document.getElementById("galeria") || {}).textContent || ""
+  }));
+  check("G1", "galería: título «Conoce nuestro espacio de bienestar»", galeria.titulo === "Conoce nuestro espacio de bienestar", galeria.titulo);
+  check("G2", "galería: aclaración visible «Imágenes referenciales»", galeria.nota === "Imágenes referenciales", galeria.nota);
+  check("G3", "sin afirmaciones de fotografía real en la galería", !/ambiente real|fotograf[ií]as? reales?/i.test(galeria.texto), "");
+  const profesional = await pg.evaluate(() => (document.querySelector(".profesional") || {}).textContent || "");
+  check("P1", "presentación de la profesional: Leonor Morán René, fundadora", /Leonor Morán René/.test(profesional) && /Fundadora/.test(profesional), "");
   // Móvil 390 px
   const movil = await browser.newPage();
   await movil.setViewport({ width: 390, height: 844, isMobile: true, hasTouch: true });

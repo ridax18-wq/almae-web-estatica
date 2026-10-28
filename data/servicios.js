@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ALMAE – Catálogo de servicios
  *
  * Los precios NO se escriben aquí: se referencian con tarifaId hacia
@@ -49,33 +49,18 @@ window.ALMAE_CATEGORIAS = [
 
 window.ALMAE_SERVICIOS = [
   {
-    id: "fisioterapia-rehabilitacion",
-    nombre: "Fisioterapia y rehabilitación",
-    categoria: "rehabilitacion",
-    imagen: "",
-    alt: "Sesión de fisioterapia y rehabilitación en ALMAE",
-    descripcion: "Proceso terapéutico orientado a recuperar la función tras una lesión, dolor o limitación del movimiento.",
-    beneficios: "Puede ayudar a mejorar la movilidad, la fuerza y la autonomía en las actividades diarias.",
-    tarifaId: null,
-    modalidades: ["consultorio"],
-    estado: "activo",
-    reservable: true,
-    orden: 1,
-    visible: true
-  },
-  {
     id: "terapia-fisica",
-    nombre: "Terapia física",
+    nombre: "Terapia física y rehabilitación",
     categoria: "rehabilitacion",
     imagen: "assets/images/servicios-fotos/fisioterapia-domicilio.jpg",
-    alt: "Atención de terapia física en consultorio ALMAE",
-    descripcion: "Sesiones de terapia física con abordaje personalizado según tu evaluación inicial.",
-    beneficios: "Orientada a acompañar la recuperación funcional y el manejo del dolor.",
+    alt: "Sesión de terapia física y rehabilitación en ALMAE",
+    descripcion: "Proceso terapéutico orientado a recuperar la función tras una lesión, dolor o limitación del movimiento, con sesiones personalizadas según tu evaluación inicial.",
+    beneficios: "Puede ayudar a mejorar la movilidad, la fuerza y la autonomía en las actividades diarias, y a manejar el dolor de forma progresiva.",
     tarifaId: "terapia-fisica",
     modalidades: ["consultorio", "domicilio"],
     estado: "activo",
     reservable: true,
-    orden: 2,
+    orden: 1,
     visible: true
   },
   {
@@ -159,8 +144,8 @@ window.ALMAE_SERVICIOS = [
     categoria: "masajes",
     imagen: "",
     alt: "Sesión de masoterapia en ALMAE",
-    descripcion: "Técnicas manuales aplicadas con fines terapéuticos según la valoración del caso.",
-    beneficios: "Puede contribuir a relajar la musculatura y aliviar la tensión local.",
+    descripcion: "Masaje con técnicas manuales de finalidad terapéutica, indicado después de la valoración del profesional para tratar molestias musculares y articulares.",
+    beneficios: "Se integra al plan de tratamiento y puede ayudar a mejorar la movilidad de la zona tratada.",
     tarifaId: null,
     modalidades: ["consultorio"],
     estado: "activo",
@@ -174,8 +159,8 @@ window.ALMAE_SERVICIOS = [
     categoria: "masajes",
     imagen: "",
     alt: "Masaje descontracturante en ALMAE",
-    descripcion: "Masaje orientado a trabajar zonas de tensión muscular y rigidez.",
-    beneficios: "Ayuda a disminuir la sensación de carga muscular y mejorar la relajación.",
+    descripcion: "Masaje localizado en zonas puntuales de tensión y contractura muscular, para aliviar la rigidez y la carga de la musculatura.",
+    beneficios: "Está pensado para el alivio de molestias de tensión puntual; no sustituye un tratamiento terapéutico indicado.",
     tarifaId: null,
     modalidades: ["consultorio"],
     estado: "activo",

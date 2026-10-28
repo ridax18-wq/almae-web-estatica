@@ -19,7 +19,7 @@
  *   id: "promo-masaje-60",
  *   titulo: "Nombre de la promoción",
  *   descripcion: "Breve descripción del beneficio, sin descuentos inventados.",
- *   imagen: "assets/images/promociones/masaje-60.jpg",   // ruta relativa o ""
+ *   imagen: "",   // ruta relativa a assets/images/ (vacía = sin imagen)
  *   alt: "Descripción de la imagen",
  *   servicioId: "masaje-antiestres-60",                   // id de data/servicios.js o ""
  *   precioPromocional: "",                                // ej.: "S/ 60" solo si está autorizado

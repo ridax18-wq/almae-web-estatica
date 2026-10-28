@@ -2109,3 +2109,12 @@ body.lightbox-open {
 .service-card__media--pendiente {
   background: #f3ece8;
 }
+
+/* Aclaración visible sobre las imágenes de la galería. */
+.gallery-note {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--color-ink-mute);
+  text-align: center;
+}

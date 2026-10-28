@@ -44,8 +44,8 @@ window.ALMAE_CONTENIDOS = {
     // Presentación de la profesional. El nombre y las credenciales no están
     // validados: completarlos solo con datos confirmados por la profesional.
     profesional: {
-      cargo: "Directora de ALMAE – Terapia y Spa",
-      texto: "Conoce a la profesional a cargo de ALMAE y el espacio donde recibirás tu atención."
+      cargo: "Leonor Morán René",
+      texto: "Fundadora de ALMAE – Terapia y Spa. Especialista en fisioterapia y técnica en fisioterapia."
     },
     items: [
       {
@@ -79,9 +79,11 @@ window.ALMAE_CONTENIDOS = {
     },
     galeria: {
       eyebrow: "Galería",
-      titulo: "Conoce nuestro consultorio",
+      titulo: "Conoce nuestro espacio de bienestar",
       lead:
-        "Ambiente real, limpio y luminoso, preparado para tu sesión de terapia."
+        "Un ambiente limpio, luminoso y preparado para tu sesión de terapia.",
+      // Aclaración visible: las imágenes son referenciales, no fotografías reales del local.
+      aclaracion: "Imágenes referenciales"
     },
     reserva: {
       eyebrow: "Reserva tu cita",

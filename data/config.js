@@ -83,14 +83,14 @@ window.ALMAE_CONFIG = {
     },
     nosotros: {
       ruta: "assets/images/consultorio/consultorio-limpio-luminoso.jpg",
-      alt: "Consultorio de ALMAE con camilla, estantería de equipos y ventanales",
+      alt: "Imagen referencial del consultorio de ALMAE, con camilla y estantería de equipos",
       ancho: 1086,
       alto: 1448
     },
     // Presentación de la profesional (autorizada por la propia profesional).
     profesional: {
       ruta: "assets/images/profesional/directora-almae.jpg",
-      alt: "Directora de ALMAE – Terapia y Spa frente al letrero del consultorio",
+      alt: "Leonor Morán René, fundadora de ALMAE – Terapia y Spa",
       ancho: 1200,
       alto: 675
     },
@@ -99,28 +99,28 @@ window.ALMAE_CONFIG = {
       {
         ruta: "assets/images/consultorio/consultorio-limpio-luminoso.jpg",
         full: "assets/images/consultorio/consultorio-limpio-luminoso.jpg",
-        alt: "Consultorio de ALMAE: camilla, estantería de equipos y ventana con luz natural",
+        alt: "Imagen referencial del consultorio de ALMAE, con camilla y ventana con luz natural",
         ancho: 1086,
         alto: 1448
       },
       {
         ruta: "assets/images/galeria/consultorio-galeria-1.jpg",
         full: "assets/images/galeria/consultorio-galeria-1.jpg",
-        alt: "Vista del consultorio de ALMAE con estantería y camilla",
+        alt: "Imagen referencial del consultorio de ALMAE, con estantería y camilla",
         ancho: 1122,
         alto: 1402
       },
       {
         ruta: "assets/images/galeria/consultorio-galeria-2.jpg",
         full: "assets/images/galeria/consultorio-galeria-2.jpg",
-        alt: "Camilla de terapia y estantería del consultorio de ALMAE",
+        alt: "Imagen referencial del consultorio de ALMAE, con camilla de terapia y estantería",
         ancho: 1122,
         alto: 1402
       },
       {
         ruta: "assets/images/galeria/consultorio-galeria-3.jpg",
         full: "assets/images/galeria/consultorio-galeria-3.jpg",
-        alt: "Sala de terapia de ALMAE con camilla y ventanal",
+        alt: "Imagen referencial de una sala de terapia de ALMAE, con camilla y ventanal",
         ancho: 1122,
         alto: 1402
       }
