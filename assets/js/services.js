@@ -59,6 +59,7 @@
       (servicio.imagen
         ? "<div class=\"service-card__media\">" +
           "<img src=\"" + esc(servicio.imagen) + "\" alt=\"" + esc(servicio.alt || servicio.nombre) + "\" loading=\"lazy\" width=\"640\" height=\"480\">" +
+          (servicio.imagenReferencial ? "<span class=\"service-card__ref\">Imagen referencial</span>" : "") +
           "</div>"
         : // Sin fotografía verificada: espacio neutro reservado, sin icono ni ilustración.
           "<div class=\"service-card__media service-card__media--pendiente\" aria-hidden=\"true\"></div>") +

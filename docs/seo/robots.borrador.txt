@@ -1,0 +1,4 @@
+# BORRADOR de robots.txt para cuando exista la URL pública.
+# Añadir la línea Sitemap al archivo robots.txt de la raíz solo después de publicar.
+#
+# Sitemap: https://ridax18-wq.github.io/almae-web-estatica/sitemap.xml

@@ -143,6 +143,20 @@ const APROBADAS = {
   check("G3", "sin afirmaciones de fotografía real en la galería", !/ambiente real|fotograf[ií]as? reales?/i.test(galeria.texto), "");
   const profesional = await pg.evaluate(() => (document.querySelector(".profesional") || {}).textContent || "");
   check("P1", "presentación de la profesional: Leonor Morán René, fundadora", /Leonor Morán René/.test(profesional) && /Fundadora/.test(profesional), "");
+  // Aclaración «Imagen referencial» solo en las tarjetas con gráficas generadas
+  // Recorre todas las categorías para ver todas las tarjetas
+  const refs = [];
+  for (let i = 0; i < filtros.length; i++) {
+    await filtros[i].click();
+    await wait(200);
+    const r = await pg.evaluate(() => Array.from(document.querySelectorAll(".service-card")).filter((c) => c.querySelector(".service-card__ref")).map((c) => c.getAttribute("data-id")));
+    refs.push(...r);
+  }
+  await filtros[0].click();
+  await wait(200);
+  const esperadasRef = S.filter((s) => s.imagenReferencial).map((s) => s.id);
+  check("R1", "aclaración «Imagen referencial» visible exactamente en las gráficas generadas", JSON.stringify(refs.slice().sort()) === JSON.stringify(esperadasRef.slice().sort()), refs.join(","));
+
   // Móvil 390 px
   const movil = await browser.newPage();
   await movil.setViewport({ width: 390, height: 844, isMobile: true, hasTouch: true });

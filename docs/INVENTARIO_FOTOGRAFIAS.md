@@ -128,3 +128,41 @@ Las copias son derivadas de los originales, que no se han modificado.
 **Riesgo abierto:** el texto de la galería dice «Ambiente real». Las cuatro imágenes de la galería son renders generados por IA. Pendiente de decisión sobre el texto.
 
 **Fotos sin uso tras el cambio** (copias en `assets/`, pendientes de eliminar si confirmas): `consultorio/consultorio-luminoso.jpg`, `galeria/consultorio-vista-amplia.jpg`, `galeria/ventana-camilla.jpg`, `galeria/estanteria-equipo.jpg`, `galeria/letrero-almae.jpg`, `servicios/*.svg` (5).
+
+---
+
+## 7. Inventario de publicación (Hito 7)
+
+Estado a la fecha de `3c1764a`. Hay 21 archivos de imagen versionados: 9 fotografías o gráficas y 12 archivos de marca, iconos y placeholder.
+
+### 7.1 Fotografías y gráficas
+
+| Archivo | Contenido | Origen | Estado de autorización | Presentación |
+|---|---|---|---|---|
+| `assets/images/hero/consultorio-hero.jpg` | Consultorio | Material propio o autorizado (confirmado por el responsable) | **Confirmada** | Portada |
+| `assets/images/consultorio/consultorio-limpio-luminoso.jpg` | Consultorio | Render generado con IA | **Confirmada como referencial** | «Nosotros» y galería; alt indica «imagen referencial» |
+| `assets/images/galeria/consultorio-galeria-1.jpg` | Consultorio | Render generado con IA | **Confirmada como referencial** | Galería; sección con aclaración visible |
+| `assets/images/galeria/consultorio-galeria-2.jpg` | Consultorio | Render generado con IA | **Confirmada como referencial** | Galería |
+| `assets/images/galeria/consultorio-galeria-3.jpg` | Consultorio | Render generado con IA | **Confirmada como referencial** | Galería |
+| `assets/images/profesional/directora-almae.jpg` | Leonor Morán René | Fotografía de la profesional | **Confirmada**: autorización de la profesional registrada | Presentación en «Nosotros» |
+| `assets/images/servicios-fotos/fisioterapia-domicilio.jpg` | Terapia física y rehabilitación | Gráfica generada con IA | **Pendiente de confirmación escrita** de uso | Tarjeta de terapia física |
+| `assets/images/servicios-fotos/reductor-consultorio.jpg` | Masaje estético reductor | Gráfica generada con IA | **Pendiente de confirmación escrita** de uso | Tarjeta de masaje reductor |
+| `assets/images/servicios-fotos/reflexologia-consultorio.jpg` | Reflexología | Gráfica generada con IA | **Pendiente de confirmación escrita** de uso | Tarjeta de reflexología |
+
+**Observación:** las tres gráficas de servicios muestran personas generadas y precios impresos. Los precios coinciden con `config.js`. Su uso fue aprobado por el responsable en la fase anterior, pero no está restablecido por escrito en esta fase. Se recomienda confirmarlo por escrito y añadir la aclaración «imagen referencial» en las tarjetas.
+
+### 7.2 Marca, iconos y placeholder
+
+| Archivo | Estado |
+|---|---|
+| `assets/images/logo/almae-logo-dark.png`, `almae-logo-light.png`, `almae-mark-light.png` | **Confirmada** (identidad de marca) |
+| `assets/images/logo/favicon-16`, `-32`, `-48`, `-64`, `-180`, `-512` (`.png`) | **Confirmada** (derivados del logotipo) |
+| `assets/apple-touch-icon.png`, `favicon.ico` | **Confirmada** |
+| `assets/images/placeholder.svg` | **Confirmada** (propio del proyecto) |
+
+### 7.3 Excluidas de la publicación
+
+- Fotografías del local con cartel de terceros, retiradas (en `%TEMP%\opencode\assets-retirados-hito7`).
+- Fotografías de galería derivadas de la fotografía con persona identificable, retiradas.
+- Pictogramas SVG de servicios, retirados.
+- Toda la carpeta `Imagenes\` (originales, sin modificar).
