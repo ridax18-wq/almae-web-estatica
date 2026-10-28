@@ -194,3 +194,81 @@ No se requiere cambiar ningÃºn otro archivo: todas las rutas del proyecto son re
 | Una foto no aparece | Confirma que estÃ¡ en `assets/images/` y que no estÃ¡ excluida en `.gitignore` |
 | Los cambios no aparecen | Espera unos minutos y recarga con `Ctrl + F5` |
 | `git push` pide usuario y contraseÃ±a | Usa `gh auth login` o un token de acceso personal de GitHub |
+
+---
+
+## Anexo A. Procedimiento exacto (NO ejecutar sin autorización expresa)
+
+Cuenta GitHub activa en el equipo: `ridax18-wq` (verificada con `gh auth status`). Confirmar por escrito antes de usarla.
+
+1. **Confirmar que el repositorio local está limpio y en `main`:**
+
+   ```powershell
+   cd D:\ALMAE
+   git status --short          # sin salida
+   git log --oneline -1        # debe mostrar 41b80fd o un commit posterior aprobado
+   ```
+
+2. **Crear el repositorio remoto vacío** (sin `--push`; el envío se hace en el paso 4):
+
+   ```powershell
+   gh repo create almae-web-estatica --public --source D:\ALMAE --remote origin --description "ALMAE – Terapia y Spa: web informativa"
+   ```
+
+3. **Verificar el remoto antes de enviar:**
+
+   ```powershell
+   git remote -v               # debe mostrar https://github.com/ridax18-wq/almae-web-estatica.git
+   ```
+
+4. **Enviar la rama `main`:**
+
+   ```powershell
+   git push -u origin main
+   ```
+
+5. **Activar GitHub Pages** (desde la rama `main`, carpeta `/ (root)`):
+
+   ```powershell
+   gh api -X POST repos/ridax18-wq/almae-web-estatica/pages -f "source[branch]=main" -f "source[path]=/"
+   ```
+
+   Alternativa en la web: *Settings ? Pages ? Deploy from a branch ? main / (root) ? Save*.
+
+6. **Esperar 1–3 minutos** y comprobar la URL: `https://ridax18-wq.github.io/almae-web-estatica/`.
+
+7. **Pruebas contra la URL pública:**
+
+   ```powershell
+   cd D:\ALMAE\tests
+   node run-all.js https://ridax18-wq.github.io/almae-web-estatica
+   ```
+
+**Antes del paso 2 deben cumplirse todas las condiciones de la sección 4.0** (autorizaciones de fotos, aviso de privacidad aprobado, copia de seguridad conservada).
+
+**Nota:** la cuenta y la URL son las que indica `gh`. Si la cuenta no es la correcta, detenerse antes del paso 2.
+
+---
+
+## Anexo B. Metadatos SEO y sitemap (cuando exista la URL definitiva)
+
+Se hacen solo después de publicar, con la URL real. No antes.
+
+1. **`data/config.js` ? `seo.urlPublica`:** escribir `"https://ridax18-wq.github.io/almae-web-estatica/"` (o el dominio propio). `assets/js/content.js` añade automáticamente:
+   - `<link rel="canonical">`
+   - `<meta property="og:url">`
+   - `<meta property="og:image">` y `<meta name="twitter:image">`, apuntando a la imagen de portada (`imagenes.hero`).
+2. **Imagen para redes sociales:** la imagen de portada es de 1200 × 800. Lo recomendado es 1200 × 630. Esta imagen (`consultorio-hero.jpg`) tiene aún pendiente la verificación de titularidad (ver inventario).
+3. **`sitemap.xml`** (crear en la raíz, con la misma URL):
+
+   ```xml
+   <?xml version="1.0" encoding="UTF-8"?>
+   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+     <url><loc>https://ridax18-wq.github.io/almae-web-estatica/</loc></url>
+   </urlset>
+   ```
+
+4. **`robots.txt`:** añadir la línea `Sitemap: https://ridax18-wq.github.io/almae-web-estatica/sitemap.xml`.
+5. **Verificación:** `node tests\seo-privacidad-audit.js https://…` y revisar que `canonical` y `og:url` coincidan con la URL pública.
+
+**No inventar dominios.** Mientras no exista la URL confirmada, `seo.urlPublica` permanece vacío y no se publica ningún metadato con marcadores.

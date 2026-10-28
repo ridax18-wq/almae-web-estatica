@@ -79,3 +79,28 @@ Antes de publicar, un profesional debe revisar:
 - RazÃ³n social, RUC, domicilio fiscal, correo electrÃ³nico y nombre de encargado: no aparecen en el proyecto y no se han supuesto.
 - Plazos de respuesta: no se han fijado.
 - Conformidad legal: no se declara.
+
+---
+
+## Formulario para el responsable (completar antes de publicar)
+
+Los campos en blanco no se han completado con suposiciones. Completar todos los que apliquen y devolverlos por escrito.
+
+| # | Dato | Respuesta | Marcador que resuelve |
+|---|---|---|---|
+| 1 | Razón social o nombre completo de la persona responsable | | 1 |
+| 2 | Tipo de responsable (persona natural / persona jurídica) | | 1 |
+| 3 | RUC (si es persona jurídica o persona natural con negocio) | | 1 |
+| 4 | DNI del titular (si es persona natural) | | 1 |
+| 5 | Domicilio fiscal | | 1 |
+| 6 | Correo electrónico para ejercer derechos de datos personales | | 1 y 3 |
+| 7 | Número de WhatsApp de atención (ya publicado: +51 919 608 174) ¿es cuenta personal o WhatsApp Business? | | 2 |
+| 8 | Plazo de conservación de los mensajes de solicitud en el teléfono | | 2 |
+| 9 | ¿Existen terceros que reciban los datos (agenda externa, encargados)? Indicar cuáles | | 2 |
+| 10 | Plazos de respuesta a solicitudes de derechos | | 3 |
+| 11 | ¿Existe banco de datos inscrito o se debe inscribir? | | 4 |
+| 12 | Medidas de seguridad aplicadas a los datos recibidos | | 4 |
+| 13 | ¿La web usa cookies, analítica o herramientas de terceros? (hoy: ninguna) | | 4 |
+| 14 | Revisión jurídica realizada por (nombre y colegiatura del profesional) | | 4 |
+
+**Estado:** la publicación queda bloqueada hasta que el aviso se apruebe. Los cuatro marcadores `[PENDIENTE]` siguen en `data/contenidos.js` y no se eliminan.

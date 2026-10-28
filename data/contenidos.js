@@ -45,7 +45,7 @@ window.ALMAE_CONTENIDOS = {
     // validados: completarlos solo con datos confirmados por la profesional.
     profesional: {
       cargo: "Leonor Morán René",
-      texto: "Fundadora de ALMAE – Terapia y Spa. Especialista en fisioterapia y técnica en fisioterapia."
+      texto: "Fundadora de ALMAE – Terapia y Spa"
     },
     items: [
       {
