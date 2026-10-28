@@ -77,9 +77,9 @@ window.ALMAE_CONFIG = {
     placeholder: "assets/images/placeholder.svg",
     hero: {
       ruta: "assets/images/hero/consultorio-hero.jpg",
-      alt: "Consultorio de ALMAE: camilla de terapia, equipos y ventanales con luz natural",
-      ancho: 1200,
-      alto: 800
+      alt: "Consultorio de ALMAE: letrero de marca, carrito de equipos, camilla y ventanales con luz natural",
+      ancho: 1086,
+      alto: 1448
     },
     nosotros: {
       ruta: "assets/images/consultorio/consultorio-limpio-luminoso.jpg",
