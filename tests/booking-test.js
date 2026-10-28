@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer-core");
 
 const EDGE = process.env.CHROME_PATH || "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
-const URL = process.env.ALMAE_BASE || "http://127.0.0.1:8765/";
+const URL = (process.argv[2] || process.env.ALMAE_BASE || "http://127.0.0.1:8765").replace(/\/$/, "") + "/";
 const OUT = process.env.ALMAE_SHOTS || require("path").join(__dirname, ".capturas");
 require("fs").mkdirSync(OUT, { recursive: true });
 
