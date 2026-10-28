@@ -4,13 +4,35 @@ Historial de cambios del proyecto web de ALMAE – Terapia y Spa.
 
 ---
 
+## Hito 7 — Saneamiento del historial y preparación de respaldo GitHub
+
+**Estado:** pruebas 141/141 PASS, documentación corregida, historial saneado localmente. Sin repositorio remoto, sin push, sin GitHub Pages.
+
+### Validación funcional
+- Batería completa contra servidor local: **141/141 PASS** (`booking-test` 24, `hito5-test` 20, `reservas-popup` 12, `responsive-audit` 38, `seo-privacidad-audit` 23, `catalogo-test` 24). `Suites con fallos: 0`.
+- Repetida tras el saneamiento del historial: mismo resultado, 141/141.
+
+### Fotografía de equipo retirada
+- `ambiente-almae.jpg` (persona identificable, crédito de fotógrafo) **ya no está en el árbol ni en el historial**: se excluyó del índice en el Hito 6 y se retiró del historial con el reescribir del baseline (commit actual `b3c082e` y posteriores). El blob original no existe en el repositorio. La fotografía original se conserva intacta en `D:\ALMAE\Imagenes`, fuera de Git. **No requiere autorización de uso porque no se publica.**
+
+### Saneamiento del historial (autorizado)
+- Retirada del historial únicamente `assets/images/consultorio/consultorio-luminoso.jpg`: cartel «SE VENDE» con número de teléfono de un tercero visible. No autorizada para publicación.
+- Verificada su ruta exacta y su presencia únicamente en los commits intermedios del Hito 6 (`8b5fca6` y descendientes hasta su sustitución). No existía en el baseline ni en el árbol actual.
+- Resto del historial intacto: fotos de galería y pictogramas retirados por obsolescencia (titularidad confirmada) no se tocaron.
+- Copia de seguridad verificable antes de reescribir (bundle Git + directorio completo) fuera de `D:\ALMAE`.
+
+### Corrección documental
+- `docs/PRUEBAS.md`: añadida la suite `catalogo-test.js` (24) y el total de 141 verificaciones (antes solo listaba 5 suites y 117 pruebas).
+
+---
+
 ## Hito 6 — Auditoría integral y preparación para publicación
 
 **Estado:** auditado y corregido en local. Sin push ni repositorio remoto. Cambios del Hito 6 pendientes de confirmar en Git.
 
 ### Control de versiones
 - Commit local `b9cfa49` «chore: baseline ALMAE static web through milestone 5» (48 archivos).
-- Excluida del índice `assets/images/consultorio/ambiente-almae.jpg` (persona identificable, crédito de fotógrafo, sin uso). Excluida también en `.gitignore`. **Sigue en el historial de `b9cfa49`**: decidir antes de cualquier push (ver `docs/CHECKLIST_PUBLICACION.md`, sección 6).
+- Excluida del índice `assets/images/consultorio/ambiente-almae.jpg` (persona identificable, crédito de fotógrafo, sin uso). Excluida también en `.gitignore`. En su momento se señaló que seguía en el historial del baseline; con el reescribir posterior del baseline (ver Hito 7) **ya no existe en el historial**.
 - `.gitignore`: añadidos `tests/node_modules/` y `tests/.capturas/`.
 
 ### Pruebas
@@ -148,7 +170,7 @@ Historial de cambios del proyecto web de ALMAE – Terapia y Spa.
 ## Pendientes conocidos
 
 - Revisión jurídica del aviso de privacidad (4 marcadores `[PENDIENTE]`).
-- Autorización de la fotografía de equipo.
+- ~~Autorización de la fotografía de equipo.~~ Resuelto: la fotografía se retiró del árbol y del historial; no se publica (ver Hito 7).
 - Mapa con coordenadas verificadas.
 - Horarios confirmados.
 - URL definitiva para SEO, `sitemap.xml` y `robots.txt` con sitemap.

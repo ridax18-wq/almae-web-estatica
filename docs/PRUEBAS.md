@@ -67,6 +67,9 @@ El resultado final muestra `Suites con fallos: 0` cuando todo está correcto.
 | `reservas-popup.js` | Ventana de WhatsApp **bloqueada** (alternativa visible y accesible) y **permitida** | 12 |
 | `responsive-audit.js` | Resoluciones 390, 820, 1024 y 1440 px: desbordes, tamaños de texto, áreas táctiles, imágenes, menú, lightbox. Genera capturas | 38 |
 | `seo-privacidad-audit.js` | Metadatos, encabezados, imágenes, datos estructurados, textos seguros frente a inyección de HTML, archivos publicables, credenciales, almacenamiento | 23 |
+| `catalogo-test.js` | Catálogo de 19 servicios: identificadores únicos, categorías, tarifas enlazadas, imágenes referenciales, servicios sin foto con espacio neutro | 24 |
+
+Total: **141 pruebas** (24 + 20 + 12 + 38 + 23 + 24). `node run-all.js` ejecuta las seis en ese orden.
 
 Ejecutar una sola:
 
