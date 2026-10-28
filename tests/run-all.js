@@ -9,7 +9,7 @@ const { spawnSync } = require("child_process");
 const path = require("path");
 
 const base = process.argv[2] || process.env.ALMAE_BASE || "http://127.0.0.1:8765";
-const suites = ["booking-test.js", "hito5-test.js", "reservas-popup.js", "responsive-audit.js", "seo-privacidad-audit.js"];
+const suites = ["booking-test.js", "hito5-test.js", "reservas-popup.js", "responsive-audit.js", "seo-privacidad-audit.js", "catalogo-test.js"];
 let fallos = 0;
 
 for (const s of suites) {

@@ -49,6 +49,24 @@ Antes de cada publicación, revisa la lista de archivos que se subirán (paso 6)
 
 ## 4. Primera publicación (requiere autorización)
 
+### 4.0. Condiciones previas (todas obligatorias)
+
+- [ ] **Autorización expresa** para crear el repositorio remoto, hacer `push` y activar Pages. Sin esta autorización no ejecutar ningún comando de las secciones siguientes que sea remoto.
+- [ ] Cuenta de GitHub confirmada por escrito (usuario exacto).
+- [ ] Decisión sobre la fotografía del consultorio (ver `docs/INVENTARIO_FOTOGRAFIAS.md`, sección 3).
+- [ ] Decisión sobre las fotografías del consultorio y de la profesional (sección 2 del mismo inventario).
+- [ ] Aviso de privacidad revisado por la persona responsable (ver `docs/PRIVACIDAD_PENDIENTES.md`).
+- [ ] Commit `ad44df3` (o posterior) verificado: `git status` limpio y `git log --oneline main` correcto.
+- [ ] Pruebas en verde en local: `node run-all.js` (117/117).
+
+### 4.0.1. Copia de seguridad
+
+**No eliminar** la copia de seguridad del historial hasta confirmar el cierre del despliegue (la publicación funciona y la prueba posterior está completa). Ubicación actual:
+
+`%TEMP%\opencode\backup-almae-git-20261028-085222\` (bundle `almae-prelimpieza.bundle` y copia de `.git`).
+
+Esta copia contiene la fotografía `ambiente-almae.jpg` retirada del historial. Está fuera del repositorio y no debe subirse a ningún sitio. Cuando se confirme el cierre, la persona responsable decide si se elimina.
+
 ### Paso 1. Verificar el estado local
 
 ```powershell

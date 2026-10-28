@@ -17,7 +17,8 @@ Estado a la fecha del Hito 6. **La web no está publicada.** Este documento sepa
 | `index.html` en la raíz | Cumplido | |
 | `.nojekyll` presente | Cumplido | A7 |
 | `.gitignore` excluye originales, directorios antiguos y fotos no autorizadas | Cumplido | A8 y `git check-ignore` |
-| Fotos sin persona identificable ni crédito de autor | Cumplido en código | Ver sección 3, punto 1 |
+| Fotos publicadas sin persona identificable ni crédito de autor | Parcial: las fotos publicadas no muestran personas, pero la titularidad no está documentada | Ver `docs/INVENTARIO_FOTOGRAFIAS.md` |
+| Fotos designadas para el consultorio, servicios y profesional | **No cumplido**: indicios de imágenes generadas por IA y precios impresos | Ver sección 3.1 y el inventario |
 | Sin marcadores PLACEHOLDER | Cumplido | A3 |
 | Pruebas de regresión (Hitos 4 y 5) | Cumplido | 117/117 |
 | Responsive 390, 820, 1024, 1440 px | Cumplido | 38/38 y revisión visual |
@@ -46,6 +47,9 @@ Estado a la fecha del Hito 6. **La web no está publicada.** Este documento sepa
 - [ ] **Fotografía `assets\images\equipo\atencion-profesional.jpg`**: excluida. No se publica hasta contar con autorización escrita de la persona retratada.
 - [ ] Confirmar la **licencia o autorización de las fotos del consultorio** que sí se publican (`consultorio-luminoso.jpg`, `consultorio-hero.jpg` y las cuatro de la galería). Si proceden del mismo fotógrafo, conviene documentar la cesión de uso.
 - [ ] Revisión visual de las fotos publicadas: **no aparecen personas** ni pacientes.
+- [ ] **Renders del consultorio** (`Imagenes\CONSULTORIO\`, cuatro archivos): presentan rasgos de imagen generada por IA. La especificación del proyecto prohíbe presentarlas como fotografías del consultorio. **Bloqueante** si se quieren usar como fotos reales. Decisión pendiente: usarlas solo como ilustración claramente identificada, o no usarlas.
+- [ ] **Gráficas de servicios** (`Imagenes\Servicios\`, nueve archivos): personas generadas, texto publicitario y **precios impresos**. Dos precios de reflexología (S/ 70 y S/ 60) no existen en `config.js`. Bloqueante hasta decidir el tratamiento de esos precios y de las personas.
+- [ ] **Retrato de la profesional** (`Imagenes\Retrato ejecutivo…`): persona identificable; origen posiblemente generado; cargo y nombre sin validar. Bloqueante hasta confirmar origen real, autorización escrita y datos profesionales.
 - [ ] **Hallazgo:** en `consultorio-luminoso.jpg` (y posiblemente en otras fotos tomadas desde la misma ventana) se ve, al fondo, un **cartel «SE VENDE» con un número de teléfono de un tercero** (un edificio vecino). No es dato de pacientes, pero es información ajena publicada sin relación con ALMAE. **Decisión pendiente del responsable:** recortar o difuminar esa zona (esto modifica la foto y debe aprobarse visualmente) o retirar esa foto de la web. No se ha alterado en esta fase.
 
 ### 3.2. Aviso de privacidad (Ley N.° 29733 y DS N.° 016-2024-JUS)
@@ -124,18 +128,15 @@ Además, comprobar a mano:
 
 ## 6. Control de versiones antes de publicar
 
-Estado del repositorio local en este momento:
+Estado del repositorio local (verificado al preparar el Hito 7):
 
-- Commit baseline `b9cfa49` (local, **sin remoto, sin push**).
-- Trabajo del Hito 6 **pendiente de confirmar** (sin commit).
-- `ambiente-almae.jpg` **figura en el commit baseline**. Quitarlo del índice no lo borra del historial.
+- Rama `main`, árbol limpio, sin remotos, sin stash.
+- `b3c082e` — `chore: baseline ALMAE static web through milestone 5` (historial reescrito; antes `b9cfa49`). Sin `ambiente-almae.jpg`.
+- `ad44df3` — `feat: milestone 6 accessibility, SEO structured data, test suites and docs`.
+- `ambiente-almae.jpg` no aparece en ningún objeto alcanzable ni en el reflog (verificado).
+- Copia de seguridad del historial previo conservada en `%TEMP%` (ver `docs/PUBLICACION_GITHUB.md`, sección 4.0.1).
 
-**Antes del primer `git push` es obligatorio resolver esto.** Opciones, a decidir por la persona responsable:
-
-1. **Rehacer el commit baseline** sin esa foto, mientras el repositorio siga sin remoto (es la opción más limpia).
-2. Reiniciar el historial (`git` nuevo repositorio) y volver a commitear.
-
-No publicar el historial actual.
+**Antes del primer `git push`:** confirmar que no hay fotografías pendientes de decisión en el índice (`git ls-files` frente a `docs/INVENTARIO_FOTOGRAFIAS.md`).
 
 ---
 

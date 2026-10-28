@@ -163,10 +163,10 @@ async function enviar(pg) {
 
   // 8. Imagen reemplazada se aplica; 9. imagen faltante => placeholder sin romper layout
   {
-    const ok = await open(browser, { "data/config.js": 'window.ALMAE_CONFIG.imagenes.hero.ruta="assets/images/consultorio/consultorio-luminoso.jpg";' });
+    const ok = await open(browser, { "data/config.js": 'window.ALMAE_CONFIG.imagenes.hero.ruta="assets/images/consultorio/consultorio-limpio-luminoso.jpg";' });
     const src = await ok.pg.evaluate(() => document.querySelector("[data-img='hero']").getAttribute("src"));
     const cargada = await ok.pg.evaluate(() => { const i = document.querySelector("[data-img='hero']"); return i.complete && i.naturalWidth > 0; });
-    check(8, "Cambiar la ruta de una imagen en config actualiza la presentación", src.endsWith("consultorio-luminoso.jpg") && cargada, "src=" + src);
+    check(8, "Cambiar la ruta de una imagen en config actualiza la presentación", src.endsWith("consultorio-limpio-luminoso.jpg") && cargada, "src=" + src);
     todosErrores.push(...ok.errors); todosExternos.push(...ok.external);
     await ok.pg.close();
 

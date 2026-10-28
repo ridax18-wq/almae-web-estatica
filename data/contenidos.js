@@ -41,6 +41,12 @@ window.ALMAE_CONTENIDOS = {
       "Nuestro objetivo es que te sientas acompañado, informado y con un entorno agradable para avanzar en tu proceso terapéutico."
     ],
     floatTexto: "Terapia, movimiento y bienestar en un solo espacio.",
+    // Presentación de la profesional. El nombre y las credenciales no están
+    // validados: completarlos solo con datos confirmados por la profesional.
+    profesional: {
+      cargo: "Directora de ALMAE – Terapia y Spa",
+      texto: "Conoce a la profesional a cargo de ALMAE y el espacio donde recibirás tu atención."
+    },
     items: [
       {
         titulo: "Evaluación individual",

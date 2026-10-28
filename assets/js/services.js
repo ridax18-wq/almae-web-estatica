@@ -56,9 +56,12 @@
     var reservable = servicio.reservable !== false;
     return (
       "<article class=\"service-card\" data-categoria=\"" + esc(servicio.categoria) + "\" data-id=\"" + esc(servicio.id) + "\">" +
-      "<div class=\"service-card__media\">" +
-      "<img src=\"" + esc(servicio.imagen) + "\" alt=\"" + esc(servicio.alt || servicio.nombre) + "\" loading=\"lazy\" width=\"640\" height=\"480\">" +
-      "</div>" +
+      (servicio.imagen
+        ? "<div class=\"service-card__media\">" +
+          "<img src=\"" + esc(servicio.imagen) + "\" alt=\"" + esc(servicio.alt || servicio.nombre) + "\" loading=\"lazy\" width=\"640\" height=\"480\">" +
+          "</div>"
+        : // Sin fotografía verificada: espacio neutro reservado, sin icono ni ilustración.
+          "<div class=\"service-card__media service-card__media--pendiente\" aria-hidden=\"true\"></div>") +
       "<div class=\"service-card__body\">" +
       "<p class=\"service-card__cat\">" + esc((categorias.find(function (c) { return c.id === servicio.categoria; }) || {}).nombre || "") + "</p>" +
       "<h3 class=\"service-card__title\">" + esc(servicio.nombre) + "</h3>" +

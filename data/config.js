@@ -82,41 +82,47 @@ window.ALMAE_CONFIG = {
       alto: 800
     },
     nosotros: {
-      ruta: "assets/images/consultorio/consultorio-luminoso.jpg",
-      alt: "Consultorio de ALMAE con camilla, estantería de equipos y ventanales con luz natural",
+      ruta: "assets/images/consultorio/consultorio-limpio-luminoso.jpg",
+      alt: "Consultorio de ALMAE con camilla, estantería de equipos y ventanales",
+      ancho: 1086,
+      alto: 1448
+    },
+    // Presentación de la profesional (autorizada por la propia profesional).
+    profesional: {
+      ruta: "assets/images/profesional/directora-almae.jpg",
+      alt: "Directora de ALMAE – Terapia y Spa frente al letrero del consultorio",
       ancho: 1200,
-      alto: 1600
+      alto: 675
     },
     // Galería: el orden del array es el orden en pantalla.
-    // Usa fotografías sin personas identificables.
     galeria: [
       {
-        ruta: "assets/images/galeria/consultorio-vista-amplia.jpg",
-        full: "assets/images/galeria/consultorio-vista-amplia.jpg",
-        alt: "Vista amplia del consultorio de ALMAE con camilla, equipo y ventanales",
-        ancho: 1200,
-        alto: 800
+        ruta: "assets/images/consultorio/consultorio-limpio-luminoso.jpg",
+        full: "assets/images/consultorio/consultorio-limpio-luminoso.jpg",
+        alt: "Consultorio de ALMAE: camilla, estantería de equipos y ventana con luz natural",
+        ancho: 1086,
+        alto: 1448
       },
       {
-        ruta: "assets/images/galeria/ventana-camilla.jpg",
-        full: "assets/images/galeria/ventana-camilla.jpg",
-        alt: "Ventanal y camilla de terapia del consultorio",
-        ancho: 560,
-        alto: 900
+        ruta: "assets/images/galeria/consultorio-galeria-1.jpg",
+        full: "assets/images/galeria/consultorio-galeria-1.jpg",
+        alt: "Vista del consultorio de ALMAE con estantería y camilla",
+        ancho: 1122,
+        alto: 1402
       },
       {
-        ruta: "assets/images/galeria/estanteria-equipo.jpg",
-        full: "assets/images/galeria/estanteria-equipo.jpg",
-        alt: "Estantería y carrito de equipos del consultorio",
-        ancho: 720,
-        alto: 960
+        ruta: "assets/images/galeria/consultorio-galeria-2.jpg",
+        full: "assets/images/galeria/consultorio-galeria-2.jpg",
+        alt: "Camilla de terapia y estantería del consultorio de ALMAE",
+        ancho: 1122,
+        alto: 1402
       },
       {
-        ruta: "assets/images/galeria/letrero-almae.jpg",
-        full: "assets/images/galeria/letrero-almae.jpg",
-        alt: "Letrero iluminado de ALMAE Terapia y Spa en el muro de listones",
-        ancho: 1200,
-        alto: 1063
+        ruta: "assets/images/galeria/consultorio-galeria-3.jpg",
+        full: "assets/images/galeria/consultorio-galeria-3.jpg",
+        alt: "Sala de terapia de ALMAE con camilla y ventanal",
+        ancho: 1122,
+        alto: 1402
       }
     ]
   },
@@ -189,5 +195,13 @@ window.ALMAE_TARIFAS = {
     moneda: "S/",
     modalidadDomicilio: true,
     nota: "Masaje estético reductor de 90 minutos."
+  },
+  // Confirmada por el responsable de ALMAE.
+  "reflexologia": {
+    consultorio: 60,
+    domicilio: 70,
+    moneda: "S/",
+    modalidadDomicilio: true,
+    nota: "Reflexología podal y facial de 60 minutos."
   }
 };
